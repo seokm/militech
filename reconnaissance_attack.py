@@ -123,13 +123,13 @@ def attack_objects(x,y):
         perrory = errory
     speed = pidx[0] * errorx + pidx[1] * (errorx-perrorx)
     yspeed = pidy[0] * errory + pidy[1] * (errory-perrory)
+    fbspeed = 50
     if cntt < 30:
         speed = int(np.clip(speed,-50,50))
         yspeed = int(np.clip(yspeed,-50,50))
     else:
         speed = int(np.clip(speed,-100,100))
         yspeed = int(np.clip(yspeed,-130,130))
-        fbspeed = 50
     me.send_rc_control(0,fbspeed,yspeed,speed)
     perrorx = errorx
     perrory = errory
